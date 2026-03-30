@@ -2,10 +2,13 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
-
+import { InputTextModule } from 'primeng/inputtext';
+import { ButtonModule } from 'primeng/button';
+import { CardModule } from 'primeng/card';
+import { FloatLabelModule } from 'primeng/floatlabel';
 @Component({
   selector: 'app-signup',
-  imports: [FormsModule,CommonModule,RouterLink],
+  imports: [FormsModule,CommonModule,RouterLink,InputTextModule,ButtonModule,FloatLabelModule,CardModule],
   standalone:true,
   templateUrl: './signup.html',
   styleUrl: './signup.css',
@@ -14,17 +17,19 @@ export class Signup {
   name:string="";
   email:string="";
   password:string="";
+  phone: string = "";
   message:string="";
   signup()
   {
-    if(!this.name || !this.email || !this.password){
+    if(!this.name || !this.email || !this.password || !this.phone){
     this.message = "Please fill all fields";
     return;
   }
     const user={              //create user object
       name:this.name,
       email:this.email,
-      password:this.password
+      password:this.password,
+      phone: this.phone
     };
     let users=JSON.parse(localStorage.getItem('users')||"[]");  //get existing user
     let Existinguser = users.find((u:any) =>
@@ -40,5 +45,6 @@ export class Signup {
     this.name="";
     this.email="";
     this.password="";
+    this.phone="";
   }
 }

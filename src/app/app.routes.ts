@@ -11,3 +11,4 @@ export const routes: Routes = [
   { path: 'dashboard', component: Dashboard },
   { path: 'product/:id', component: ProductDetails }
 ];
+
