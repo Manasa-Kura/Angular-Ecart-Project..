@@ -1,0 +1,27 @@
+.brand-container {
+  display: flex;
+  background: #2c2c2c;
+  color: white;
+  padding: 30px;
+  margin-top: 40px;
+}
+
+.left {
+  width: 30%;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.right {
+  width: 70%;
+  display: flex;
+  gap: 20px;
+}
+
+.right .card {
+  background: white;
+  color: black;
+  padding: 15px;
+  width: 200px;
+  border-radius: 6px;
+}

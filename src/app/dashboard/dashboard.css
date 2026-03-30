@@ -1,0 +1,15 @@
+.search-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.search-container p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #555;
+}
+.search-text {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #444;
+}

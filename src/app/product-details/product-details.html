@@ -1,0 +1,32 @@
+
+<div class="details-container" *ngIf="product">
+
+  <div class="left">
+    <img [src]="product.image" alt="">
+  </div>
+
+  <div class="right">
+    <h2>{{product.name}}</h2>
+
+    <p class="price">$ {{product.price}}</p>
+
+    <p *ngIf="product.stock" class="stock">Available</p>
+    <p *ngIf="!product.stock" class="out">Out of Stock</p>
+
+    <h4>Available Size</h4>
+    <button>6</button>
+    <button>7</button>
+    <button>8</button>
+
+    <h4>Available Color</h4>
+    <span class="color red"></span>
+    <span class="color green"></span>
+    <span class="color black"></span>
+
+    <button class="cart-btn" (click)="addProduct(product)">
+      Add to Cart
+    </button>
+
+  </div>
+
+</div>

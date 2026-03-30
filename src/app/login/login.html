@@ -1,0 +1,13 @@
+<div class="login-container">
+    <h2>LOGIN PAGE</h2>
+    <label>Email</label><br>
+    <input type="email" name="email" [(ngModel)]="email"><br><br>
+    <label>Password</label><br>
+    <input type="password" name="password" [(ngModel)]="password"><br><br>
+    <button (click)="login()">Login</button>
+    <p *ngIf="message">{{message}}</p>
+    <p>
+        New user?
+        <a routerLink="/signup">Signup</a>
+    </p>
+</div>

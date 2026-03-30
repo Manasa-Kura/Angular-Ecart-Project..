@@ -1,0 +1,11 @@
+<app-header></app-header>
+<div class="container">
+  <div class="search-container">
+    <app-search-bar #searchComp (searchEvent)="handleSearch($event)"></app-search-bar>
+    <button (click)="clearFromParent()">Clear</button>
+    <p *ngIf="searchValue" class="search-text">
+      Showing results for "<b>{{searchValue}}</b>"
+    </p>
+  </div>
+  <app-product-list [searchText]="searchValue"></app-product-list>
+</div>

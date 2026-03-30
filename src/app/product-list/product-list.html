@@ -1,0 +1,45 @@
+<div class="product-grid">
+  <ng-container *ngIf="filteredProducts.length > 0; else noProducts">
+    <app-product-card
+      *ngFor="let p of filteredProducts"
+      [product]="p"
+      (click)="viewProduct(p)"
+      (cartEvent)="addProduct($event)">
+    </app-product-card>
+  </ng-container>
+  <ng-template #noProducts>
+    <p class="no-data">No Products Found</p>
+  </ng-template>
+</div>
+<h3>Cart Items: {{ cartService.getCart().length }}</h3>
+<!-- right pannel -->
+<div class="overlay" *ngIf="selectedProduct" (click)="selectedProduct = null"> 
+  <div class="details-panel" (click)="$event.stopPropagation()">
+    <app-product-details
+      [product]="selectedProduct">
+    </app-product-details>
+  </div>
+</div>
+<!-- bottom cards for new arrivals -->
+<app-brand-section>
+  <div class="card" #card>
+    <h4>Latest Clothing Collection</h4>
+    <p>Explore trending outfits for men and women.</p>
+    <button>Explore</button>
+  </div>
+  <div class="card" #card>
+    <h4>Trending Footwear</h4>
+    <p>Discover stylish and comfortable shoes.</p>
+    <button>Explore</button>
+  </div>
+  <div class="card" #card>
+    <h4>Jewellery Collection</h4>
+    <p>Elegant designs for every occasion.</p>
+    <button>Explore</button>
+  </div>
+  <div class="card" #card>
+    <h4>Accessories</h4>
+    <p>Bags, watches, sunglasses and more.</p>
+    <button>Explore</button>
+  </div>
+</app-brand-section>

@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="image-section">
+    <img [src]="product.image">
+    <span class="discount">13% OFF</span>
+  </div>
+  <div class="details">
+    <p class="price">$ {{product.price}}</p>
+    <h4>{{product.name}}</h4>
+    <p *ngIf="product.stock" class="stock">
+      Available in Stock
+    </p>
+    <p *ngIf="!product.stock" class="stock-out">
+      Not available
+    </p>
+    <button (click)="addToCart()">Add to Cart</button>
+  </div>
+</div>
