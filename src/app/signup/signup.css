@@ -1,59 +1,112 @@
-.signup-container {
+.main-container {
   height: 100vh;
+  background: url('C:/Users/KuraM/OneDrive/Desktop/angular-ecart-project-main/angular-ecart-project-main/src/assets/bg.jpg') no-repeat center center/cover; /* ✅ FIXED */
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background: #fdeeea;
 }
-.signup-card {
-  width: 400px;
-  padding: 30px;
-  border-radius: 4px;
-
-  background: #ffffff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.auth-container {
+  width: 1050px;
+  height: 600px;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
-.title {
-  font-size: 22px;
-  font-weight: 600;
-  color: #282c3f;
-  margin-bottom: 20px;
+.left-panel {
+  width: 40%;
+  position: relative;
+  background: url('C:/Users/KuraM/OneDrive/Desktop/angular-ecart-project-main/angular-ecart-project-main/src/assets/shopping (2).png') no-repeat center center/cover; /* 🔥 use your image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.left-panel h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+.left-panel p {
+  font-size: 14px;
+}
+.right-panel {
+  width: 60%;
+  background: rgba(247, 239, 239, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-card {
+  width: 380px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 10px;
 }
 .form {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
 }
-.p-inputtext {
+.input-group {
+  position: relative;
+}
+.input-group input {
   width: 100%;
-  border: 1px solid #d4d5d9;
-  padding: 10px;
-  font-size: 14px;
-  color: #282c3f;
-  background-color: #d4d5d9;
-}
-.p-floatlabel label {
-  color: #94969f;
-}
-.signup-btn {
-  width: 100%;
-  background: #ff3f6c;
+  padding: 10px 5px;
   border: none;
-  font-weight: 600;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+  color: #333;
+}
+.input-group label {
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  color: #888;
+  font-size: 14px;
+  transition: 0.2s;
+  pointer-events: none;
+}
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 12px;
+  color: #2874f0;
+}
+.login-btn {
+  background: #fb641b;
+  color: white;
+  border: none;
   padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
 }
-.login-link {
+.error {
+  color: red;
+  font-size: 12px;
+}
+.message {
+  text-align: center;
+  color: #ff3f6c;
+}
+.signup-link {
+  text-align: center;
   font-size: 13px;
-  color: #282c3f;
+  color: #333;
 }
-.login-link a {
+.signup-link a {
   color: #ff3f6c;
   font-weight: 600;
   text-decoration: none;
 }
-.message {
-  font-size: 13px;
-  color: #ff3f6c;
+.required {
+  color: red;
+  font-weight: bold;
+}
+h2{
   text-align: center;
+  color: rgb(25, 20, 20);
 }

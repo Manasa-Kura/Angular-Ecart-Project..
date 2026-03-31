@@ -1,14 +1,49 @@
-<div class="login-container">
-    <h2>LOGIN PAGE</h2>
-    <label>Email</label><br>
-    <input type="email" name="email" [(ngModel)]="email"><br><br>
-    <label>Password</label><br>
-    <input type="password" name="password" [(ngModel)]="password"><br><br>
-    <button pButton label="Login" (click)="login()"></button>
-    <p *ngIf="message">{{message}}</p>
-    <p>
-        New user?
-        <a routerLink="/signup">Signup</a>
-    </p>
+<div class="main-container">
+  <div class="auth-container">
+    <div class="left-panel">
+      <!-- <h2>Welcome</h2>
+      <p>Login to access your account and continue shopping</p> -->
+    </div>
+    <div class="right-panel">
+      <div class="login-card">
+        <h2>Login </h2>
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" class="form">
+          <div class="input-group">
+            <input 
+              type="text"
+              placeholder=" "   
+              required 
+              [(ngModel)]="email"
+              name="email"
+              #emailRef="ngModel"
+            />
+            <label>Email <span class="required">*</span></label>
+          </div>
+          <small class="error" *ngIf="emailRef.invalid && emailRef.touched">
+            This field is required
+          </small>
+          <div class="input-group">
+            <input 
+              type="password"
+              placeholder=" "  
+              required 
+              [(ngModel)]="password"
+              name="password"
+              #passRef="ngModel"
+            />
+            <label>Password <span class="required">*</span></label>
+          </div>
+          <small class="error" *ngIf="passRef.invalid && passRef.touched">
+            This field is required
+          </small>
+          <button type="submit" class="login-btn" (click)="login(loginForm)">
+            Login
+          </button>
+          <p class="signup-link">
+            New user? <a  routerLink="/signup">Signup</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
-

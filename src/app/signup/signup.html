@@ -1,35 +1,74 @@
-<div class="signup-container">
-  <p-card class="signup-card">
-    <h2 class="title">Create Account</h2>
-    <div class="form">
-      <p-floatlabel>
-        <input pInputText [(ngModel)]="name" id="name" />
-        <label for="name">Full Name</label>
-      </p-floatlabel>
-      <p-floatlabel>
-        <input pInputText [(ngModel)]="email" id="email" />
-        <label for="email">Email</label>
-      </p-floatlabel>
-      <p-floatlabel>
-        <input pInputText type="password" [(ngModel)]="password" id="password" />
-        <label for="password">Password</label>
-      </p-floatlabel>
-      <p-floatlabel>
-        <input pInputText [(ngModel)]="phone" id="phone" />
-        <label for="phone">Phone Number</label>
-      </p-floatlabel>
-      <button 
-        pButton 
-        type="button" 
-        label="Signup" 
-        class="signup-btn"
-        (click)="signup()">
-      </button>
-      <p *ngIf="message" class="message">{{ message }}</p>
-      <p class="login-link">
-        Already have an account?
-        <a routerLink="/login">Login</a>
-      </p>
+<div class="main-container">
+  <div class="auth-container">
+    <div class="left-panel"></div>
+    <div class="right-panel">
+      <div class="login-card">
+        <h2>Create Account</h2>
+        <form #signupForm="ngForm" (ngSubmit)="signup(signupForm)" class="form">
+          <div class="input-group">
+            <input 
+              type="text"
+              placeholder=" "
+              [(ngModel)]="name"
+              name="name"
+              #nameRef="ngModel"
+              required
+            />
+            <label>Full Name <span class="required">*</span></label>
+          </div>
+          <small class="error" *ngIf="nameRef.invalid && nameRef.touched">
+            This field is required
+          </small>
+          <div class="input-group">
+            <input 
+              type="text"
+              placeholder=" "
+              [(ngModel)]="email"
+              name="email"
+              #emailRef="ngModel"
+              required
+            />
+            <label>Email <span class="required">*</span></label>
+          </div>
+          <small class="error" *ngIf="emailRef.invalid && emailRef.touched">
+            This field is required
+          </small>
+          <div class="input-group">
+            <input 
+              type="password"
+              placeholder=" "
+              [(ngModel)]="password"
+              name="password"
+              #passRef="ngModel"
+              required
+            />
+            <label>Password <span class="required">*</span></label>
+          </div>
+          <small class="error" *ngIf="passRef.invalid && passRef.touched">
+            This field is required
+          </small>
+          <div class="input-group">
+            <input 
+              type="text"
+              placeholder=" "
+              [(ngModel)]="phone"
+              name="phone"
+              #phoneRef="ngModel"
+              required
+            />
+            <label>Phone Number <span class="required">*</span></label>
+          </div>
+          <small class="error" *ngIf="phoneRef.invalid && phoneRef.touched">
+            This field is required
+          </small>
+          <button type="submit" class="login-btn">Signup</button>
+          <p *ngIf="message" class="message">{{ message }}</p>
+          <p class="signup-link">
+            Already have an account?
+            <a routerLink="/login">Login</a>
+          </p>
+        </form>
+      </div>
     </div>
-  </p-card>
+  </div>
 </div>

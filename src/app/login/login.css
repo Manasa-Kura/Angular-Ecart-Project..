@@ -1,15 +1,102 @@
-.login-container{
-  width: 300px;
-  margin: 50px auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  background-color: rgb(223, 232, 249);
+.main-container {
+  height: 100vh;
+  background: url('C:/Users/KuraM/OneDrive/Desktop/angular-ecart-project-main/angular-ecart-project-main/src/assets/bg.jpg') no-repeat center center/cover; /* ✅ FIXED */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.auth-container {
+  width: 1050px;
+  height: 600px;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+.left-panel {
+  width: 40%;
+  position: relative;
+  background: url('C:/Users/KuraM/OneDrive/Desktop/angular-ecart-project-main/angular-ecart-project-main/src/assets/shopping (2).png') no-repeat center center/cover; /* 🔥 use your image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+.right-panel {
+  width: 60%;
+  background: rgba(247, 239, 239, 0.95); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-card {
+  width: 320px;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.92);
   border-radius: 10px;
 }
-input{
-  width: 80%;
-  padding: 6px;
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.input-group {
+  position: relative;
+}
+.input-group input {
+  width: 100%;
+  padding: 10px 5px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+  color: #333;            
+}
+.input-group label {
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  color: #888;
+  font-size: 14px;
+  transition: 0.2s;
+  pointer-events: none;
+}
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -10px;
+  font-size: 12px;
+  color: #2874f0;
+}
+.login-btn {
+  background: #fb641b;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+.signup-link {
+  text-align: center;
+  font-size: 13px;
+  color: #333;
+}
+.signup-link a {
+  text-align: center;
+  font-size: 13px;
+  color: #ff033e;
+}
+.required {
+  color: red;
+  font-weight: bold;
 }
 h2{
-    text-align: center;
+  color: #333;
+  text-align: center;
 }
